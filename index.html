@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070a18">
+<title>Multiverse Challenge</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<section id="join" class="screen hidden">
+  <div class="wrap">
+    <div class="box">
+      <div class="center" style="margin-bottom:18px"><div class="logo">Multiverse<br>Challenge<small>Aventura en equipos</small></div></div>
+      <form class="card glow" id="joinForm" autocomplete="off">
+        <label class="lbl" for="jname">Tu nombre</label>
+        <input type="text" id="jname" maxlength="18" placeholder="Ej: Camila" required>
+        <label class="lbl" for="jcode">Código de la partida</label>
+        <input type="text" id="jcode" class="code-in" maxlength="5" placeholder="•••••" required>
+        <div id="jerr" class="err hidden"></div>
+        <button class="btn big" style="width:100%;margin-top:18px" type="submit">⚔️ ENTRAR A LA AVENTURA</button>
+        <p class="muted center" style="margin:14px 0 0;font-size:.85rem">Te asignaremos un equipo automáticamente. Necesitas el código que muestra el organizador.</p>
+      </form>
+      <p class="center muted" style="margin-top:16px"><a href="/host" style="color:var(--b)">Soy el organizador →</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="game" class="screen hidden">
+  <header id="top"></header>
+  <div id="powers"></div>
+  <main class="views">
+    <div id="view-reto" class="view">
+      <div class="reto-grid">
+        <div id="qcard" class="card"><div id="qTop"></div><div id="wheelHost" class="hidden"></div><div id="qBot"></div></div>
+        <div id="chatCard" class="card">
+          <div class="chat-h"><h3>💬 CHAT PRIVADO DEL EQUIPO</h3><span class="sp"></span><span id="chatConn" class="chip ok"></span></div>
+          <div class="msgs" id="msgs"></div>
+          <div class="quick" id="quick"></div>
+          <form class="chat-in" id="chatForm" autocomplete="off"><input type="text" id="chatIn" maxlength="240" placeholder="Escribe a tu equipo…"><button class="btn" type="submit">Enviar</button></form>
+        </div>
+        <div id="acard" class="card">
+          <div id="aDyn"></div>
+          <div id="guessBox" class="hidden">
+            <form class="guessrow" id="guessForm" autocomplete="off"><input type="text" id="gin" maxlength="60" placeholder="Escribe la respuesta del equipo…"><button class="btn gold" type="submit">ENVIAR</button></form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="view-marcador" class="view hidden"></div>
+    <div id="view-mapa" class="view hidden"></div>
+    <div id="view-equipo" class="view hidden"></div>
+    <div id="view-final" class="view hidden"></div>
+  </main>
+  <nav id="bottomNav">
+    <button data-tab="reto" class="act"><span>🎯</span>RETO</button>
+    <button data-tab="marcador"><span>🏆</span>MARCADOR</button>
+    <button data-tab="mapa"><span>🗺️</span>MAPA</button>
+    <button data-tab="equipo"><span>🛡️</span>EQUIPO</button>
+  </nav>
+</section>
+
+<div id="overlay" class="hidden"></div>
+<div id="pauseBanner" class="hidden" style="position:fixed;top:0;left:0;right:0;z-index:65;background:#92400e;text-align:center;font-weight:900;padding:6px;letter-spacing:.1em">⏸ PARTIDA EN PAUSA</div>
+<div id="conn" class="conn hidden">Reconectando…</div>
+<div id="stealModal" class="modal hidden"></div>
+<script src="/js/shared.js"></script>
+<script src="/js/player.js"></script>
+</body>
+</html>

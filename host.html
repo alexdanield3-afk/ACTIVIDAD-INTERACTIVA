@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070a18">
+<title>Multiverse Challenge · Organizador</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div id="hBar" class="h-top hidden"></div>
+
+<section id="hSetup" class="screen hidden">
+  <div class="wrap">
+    <div class="center" style="margin:10px 0 18px"><div class="logo">Multiverse Challenge<small>Panel del organizador</small></div></div>
+    <div id="resumeBox" class="card glow hidden" style="margin-bottom:14px"></div>
+    <div class="steps"><span class="on">1 · Datos de la partida</span><span class="on">2 · Elige el universo</span><span class="on">3 · ¡Crear!</span></div>
+    <div class="grid2">
+      <div class="card">
+        <h2 class="title-font">📋 La partida</h2>
+        <label class="lbl" for="gName">Nombre de la partida</label>
+        <input type="text" id="gName" maxlength="40" placeholder="Ej: Reto de Contabilidad — Grupo A" value="Multiverse Challenge">
+        <label class="lbl" for="gN">Participantes esperados</label>
+        <div class="row"><input type="number" id="gN" min="2" max="40" value="20" style="max-width:110px">
+          <div class="seg" id="nQuick"><button data-n="10">10</button><button data-n="15">15</button><button data-n="20" class="on">20</button><button data-n="25">25</button><button data-n="30">30</button></div></div>
+        <div id="recoBox" class="preview">…</div>
+        <label class="lbl" for="gTeams">Número de equipos</label>
+        <select id="gTeams"><option value="">Automático (recomendado: equipos de 4-5)</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
+        <label class="lbl">Duración de la aventura</label>
+        <div class="seg" id="gLen"><button data-l="corta">Corta · 8 retos</button><button data-l="normal" class="on">Normal · 11</button><button data-l="larga">Larga · 14</button></div>
+        <label class="lbl">Opciones</label>
+        <label class="row" style="gap:8px"><input type="checkbox" id="gAuto"> Avance automático (los retos pasan solos; tú puedes adelantar)</label>
+        <label class="row" style="gap:8px;margin-top:6px"><input type="checkbox" id="gSpy"> Observar los chats de todos los equipos</label>
+      </div>
+      <div class="card">
+        <h2 class="title-font">🧪 Modo demo</h2>
+        <p class="muted" style="margin-top:0">Simula participantes (bots) que charlan, responden, giran la ruleta y suben en el ranking. Ideal para probar el flujo completo o mostrar el juego antes de la clase. Puedes entrar tú también como jugador desde otro navegador con el código.</p>
+        <div class="seg" id="demoQuick"><button data-d="10">10</button><button data-d="15">15</button><button data-d="20">20</button><button data-d="25">25</button><button data-d="30">30</button></div>
+        <label class="row" style="gap:8px;margin-top:10px"><input type="checkbox" id="demoFast" checked> Ritmo rápido (reveal y marcador de 5-6 s)</label>
+        <button class="btn gold big" id="demoGo" style="margin-top:12px;width:100%">▶ Crear partida DEMO</button>
+        <p class="muted" style="font-size:.8rem;margin-bottom:0">La demo usa la temática seleccionada abajo y arranca sola cuando pulsas «Iniciar aventura».</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h2 class="title-font">🌌 Elige tu universo</h2>
+      <div class="themes" id="themeGrid"></div>
+      <div id="customBox" class="hidden" style="margin-top:14px"></div>
+    </div>
+    <div class="center" style="margin:18px 0 40px"><button class="btn xl pulse" id="createBtn">🚀 CREAR AVENTURA</button><div id="setupErr" class="err hidden" style="max-width:520px;margin:12px auto 0"></div></div>
+  </div>
+</section>
+
+<section id="hMain" class="screen hidden"></section>
+
+<div id="hModal" class="modal hidden"></div>
+<div id="conn" class="conn hidden">Reconectando…</div>
+<script src="/js/shared.js"></script>
+<script src="/js/host.js"></script>
+</body>
+</html>
